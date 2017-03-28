@@ -1,0 +1,118 @@
+package net.sf.jsi;
+
+import junit.framework.TestCase;
+
+import net.sf.jsi.Rectangle3;
+import net.sf.jsi.rtree.RTree3;
+
+public class RectangleMaxValueTest extends TestCase {
+  public RectangleMaxValueTest(String name) {
+    super(name);
+  }
+
+  public void testMaxValue() {
+    RTree3 rTree3 = new RTree3();
+    rTree3.init(null);
+    rTree3.add(new Rectangle3(8.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 1);
+    rTree3.add(new Rectangle3(1.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 2);
+    rTree3.add(new Rectangle3(10.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 3);
+    rTree3.add(new Rectangle3(5.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 4);
+    rTree3.add(new Rectangle3(6.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 6);
+    rTree3.add(new Rectangle3(3.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 7);
+    rTree3.add(new Rectangle3(9.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 8);
+    rTree3.add(new Rectangle3(5.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 9);
+    rTree3.add(new Rectangle3(2.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 10);
+    rTree3.add(new Rectangle3(2.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 11);
+    rTree3.add(new Rectangle3(5.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 14);
+    rTree3.add(new Rectangle3(7.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 15);
+    rTree3.add(new Rectangle3(6.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 16);
+    rTree3.delete(new Rectangle3(9.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 8);
+    rTree3.add(new Rectangle3(7.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 17);
+    rTree3.add(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 18);
+    rTree3.delete(new Rectangle3(5.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 9);
+    rTree3.add(new Rectangle3(4.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 19);
+    rTree3.delete(new Rectangle3(2.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 10);
+    rTree3.add(new Rectangle3(2.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 20);
+    rTree3.add(new Rectangle3(9.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 21);
+    rTree3.add(new Rectangle3(7.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 22);
+    rTree3.delete(new Rectangle3(10.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 3);
+    rTree3.add(new Rectangle3(3.0f, 4.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 23);
+    rTree3.delete(new Rectangle3(3.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 7);
+    rTree3.add(new Rectangle3(3.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 24);
+    rTree3.delete(new Rectangle3(8.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 1);
+    rTree3.add(new Rectangle3(3.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 25);
+    rTree3.delete(new Rectangle3(7.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 17);
+    rTree3.add(new Rectangle3(7.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 26);
+    rTree3.delete(new Rectangle3(2.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 20);
+    rTree3.add(new Rectangle3(0.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 27);
+    rTree3.delete(new Rectangle3(2.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 11);
+    rTree3.add(new Rectangle3(2.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 28);
+    rTree3.delete(new Rectangle3(5.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 4);
+    rTree3.add(new Rectangle3(4.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 29);
+    rTree3.delete(new Rectangle3(5.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 14);
+    rTree3.add(new Rectangle3(5.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 30);
+    rTree3.add(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 31);
+    rTree3.delete(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 31);
+    rTree3.add(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 32);
+    rTree3.add(new Rectangle3(5.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 33);
+    rTree3.delete(new Rectangle3(2.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 28);
+    rTree3.add(new Rectangle3(1.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 34);
+    rTree3.delete(new Rectangle3(0.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 27);
+    rTree3.add(new Rectangle3(0.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 35);
+    rTree3.add(new Rectangle3(8.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 36);
+    rTree3.delete(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 18);
+    rTree3.add(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 37);
+    rTree3.add(new Rectangle3(8.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 39);
+    rTree3.delete(new Rectangle3(7.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 22);
+    rTree3.add(new Rectangle3(5.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 40);
+    rTree3.delete(new Rectangle3(3.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 24);
+    rTree3.add(new Rectangle3(3.0f, 0.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 41);
+    rTree3.delete(new Rectangle3(7.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 26);
+    rTree3.add(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 42);
+    rTree3.delete(new Rectangle3(7.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 15);
+    rTree3.add(new Rectangle3(3.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 43);
+    rTree3.delete(new Rectangle3(4.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 29);
+    rTree3.add(new Rectangle3(4.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 44);
+    rTree3.delete(new Rectangle3(3.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 25);
+    rTree3.add(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 45);
+    rTree3.delete(new Rectangle3(3.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 43);
+    rTree3.add(new Rectangle3(1.0f, 0.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 46);
+    rTree3.delete(new Rectangle3(1.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 2);
+    rTree3.add(new Rectangle3(1.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 47);
+    rTree3.delete(new Rectangle3(9.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 21);
+    rTree3.add(new Rectangle3(7.0f, 6.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 48);
+    rTree3.delete(new Rectangle3(4.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 19);
+    rTree3.add(new Rectangle3(4.0f, 0.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 49);
+    rTree3.delete(new Rectangle3(5.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 30);
+    rTree3.add(new Rectangle3(0.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 50);
+    rTree3.delete(new Rectangle3(5.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 33);
+    rTree3.add(new Rectangle3(4.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 51);
+    rTree3.delete(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 45);
+    rTree3.add(new Rectangle3(3.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 52);
+    rTree3.delete(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 42);
+    rTree3.add(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 53);
+    rTree3.delete(new Rectangle3(5.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 40);
+    rTree3.add(new Rectangle3(3.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 54);
+    rTree3.delete(new Rectangle3(6.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 6);
+    rTree3.add(new Rectangle3(6.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 55);
+    rTree3.delete(new Rectangle3(4.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 51);
+    rTree3.add(new Rectangle3(4.0f, 8.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 56);
+    rTree3.delete(new Rectangle3(1.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 47);
+    rTree3.add(new Rectangle3(1.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 57);
+    rTree3.delete(new Rectangle3(0.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 50);
+    rTree3.add(new Rectangle3(0.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 58);
+    rTree3.delete(new Rectangle3(3.0f, 0.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 41);
+    rTree3.add(new Rectangle3(3.0f, 0.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 59);
+    rTree3.delete(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 53);
+    rTree3.add(new Rectangle3(0.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 60);
+    rTree3.delete(new Rectangle3(6.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 55);
+    rTree3.add(new Rectangle3(2.0f, 1.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 61);
+    rTree3.delete(new Rectangle3(7.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 32);
+    rTree3.add(new Rectangle3(0.0f, 5.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 62);
+    rTree3.delete(new Rectangle3(0.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 58);
+    rTree3.add(new Rectangle3(0.0f, 2.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 63);
+    rTree3.delete(new Rectangle3(3.0f, 4.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 23);
+    rTree3.add(new Rectangle3(3.0f, 3.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 64);
+    rTree3.delete(new Rectangle3(8.0f, 7.0f, 5.0f, Float.MAX_VALUE, Float.MAX_VALUE, Float.MAX_VALUE), 39);
+  }
+}
